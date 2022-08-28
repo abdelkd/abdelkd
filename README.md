@@ -7,6 +7,6 @@
 <p align="left">
 </p>
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=axiel7&show_icons=true&count_private=true&theme=github_dark)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=abdelkd&show_icons=true&count_private=true&theme=github_dark)
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=axiel7&layout=compact&theme=github_dark)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=abdelkd&layout=compact&theme=github_dark)
