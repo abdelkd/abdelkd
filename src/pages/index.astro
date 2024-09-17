@@ -27,14 +27,15 @@ const blogPosts = await getCollection('blog')
 			  	When I'm not coding, you can probably find me exploring the latest in the tech world and experimenting with new tools.
 			  </p>
 			</div>
-			<div class="space-y-2">
+			<div class="space-y-2 ">
 				<SectionHeading label="elsewhere" />
-				<div class="flex flex-col gap-3 md:flex-row md:gap-7">
+				<div class="flex flex-col gap-3 md:flex-row md:gap-7 flex-wrap max-w-2xl">
 					<Link source="Email" href={"mailto:" + socials.email} />
 					<Link source="Github" href={socials.github} />
 					<Link source="X (twitter)" href={socials.x} />
 					<Link source="LinkedIn" href={socials.linkedin} />
 					<Link source="read.cv" href={socials.readcv} />
+          <Link source="Resume" href={"/Resume.pdf"} />
 				</div>
 			</div>
 			<div class="space-y-2">

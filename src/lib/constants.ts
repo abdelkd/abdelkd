@@ -22,5 +22,5 @@ export const socials = {
 
 export const projects: Project[] = [
   { name: 'quanta', description: 'rate your project idea', year: 2024, link: `https://quanta-ten.vercel.app/` },
-  { name: 'linkan', description: 'shorten your links, written in go', year: 2024, link: `https://github.com/${usernames.github}/linkan` },
+  { name: 'linkly', description: 'shorten your links, written in go', year: 2024, link: `https://github.com/${usernames.github}/linkly` },
 ]
