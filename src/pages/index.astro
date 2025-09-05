@@ -1,13 +1,13 @@
 ---
-import '../styles/global.css'
+import '@/global.css'
 import '@fontsource-variable/inter';
-// import { getCollection } from 'astro:content'
+import { getCollection } from 'astro:content'
 
 import SectionHeading from '@/components/section-heading.astro'
 import Link from '@/components/link.astro'
 import { projects, socials } from '@/lib/constants'
 
-const blogPosts = []
+const blogPosts = await getCollection("blog")
 ---
 
 <html lang="en">
@@ -18,24 +18,22 @@ const blogPosts = []
 		<meta name="generator" content={Astro.generator} />
 		<title>Abdelkarim Djelalda</title>
 	</head>
-	<body class="white">
+  <body class="bg-background text-text">
 		<main class="w-screen md:max-w-2xl pt-10 md:pt-32 mx-auto space-y-7 px-4 pb-6">
 			<div class="flex flex-col gap-3 md:max-w-2xl mx-auto">
-				<h1 class="text-4xl font-semibold text-zinc-100">Abdelkarim Djelalda</h1>
+				<h1 class="text-4xl font-semibold text-accent">Abdelkarim Djelalda</h1>
 			  <p class="text-2xl text-zinc-300">
-			  	Hi there! I'm Kareem, a full-stack developer with a real passion for all things web. 
-			  	I'm always excited to learn new technologies and level up my skills. 
-			  	When I'm not coding, you can probably find me exploring the latest in the tech world and experimenting with new tools.
+			  	Hi there! I'm Kareem, a full-stack developer with a real passion for all things web. I'm always excited to learn new technologies and explore new spaces. When I'm not coding, you can probably find me exploring the latest in the tech world and experimenting with new tools.
 			  </p>
 			</div>
 			<div class="space-y-2 ">
 				<SectionHeading label="elsewhere" />
-				<div class="flex flex-col gap-3 md:flex-row md:gap-7 flex-wrap max-w-2xl">
+				<div class="flex flex-col gap-x-4 gap-y-[0.6em] md:flex-row flex-wrap max-w-2xl">
 					<Link source="Email" href={"mailto:" + socials.email} />
 					<Link source="Github" href={socials.github} />
 					<Link source="X (twitter)" href={socials.x} />
 					<Link source="LinkedIn" href={socials.linkedin} />
-					<Link source="read.cv" href={socials.readcv} />
+					<!-- <Link source="read.cv" href={socials.readcv} /> -->
           <Link source="Resume" href={"/Resume.pdf"} />
 				</div>
 			</div>
@@ -44,9 +42,9 @@ const blogPosts = []
 				{
 					projects.map(project => (
 					  <div class="flex w-full items-center gap-3">
-					    <a href={project.link} class="underline underline-offset-4 uppercase tracking-wide">{project.name}</a>
+					    <a href={project.link} class="underline underline-offset-4 uppercase tracking-wide text-link hover:text-link-hover">{project.name}</a>
 							<p class="text-sm text-nowrap">{project.description}</p>
-					    <div class="h-0.5 w-full bg-zinc-800"></div>
+					    <div class="h-0.5 w-full bg-border"></div>
 					    <p class="">{project.year}</p>
 				    </div>
 					))
@@ -57,15 +55,15 @@ const blogPosts = []
 			<div class="space-y-2">
 				<SectionHeading label="blog" />
 				<div class="space-y-4">
-					<!-- {blogPosts && blogPosts.map((blogPost) => ( -->
-					<!-- 	<div class="flex w-full items-center gap-3 justify-between"> -->
-					<!-- 		<div> -->
-					<!-- 			<p class="font-semibold tracking-wide">{blogPost.data.title}</p> -->
-					<!-- 			<p class="text-sm text-zinc-500" >{blogPost.data.description}</p> -->
-					<!-- 		</div> -->
-					<!-- 		<p class="text-zinc-500">{blogPost.data.publishDate.toLocaleDateString()}</p> -->
-					<!-- 	</div> -->
-					<!-- ))} -->
+					{blogPosts && blogPosts.map((blogPost) => (
+						<div class="flex w-full items-center gap-3 justify-between">
+							<div>
+								<p class="font-semibold tracking-wide">{blogPost.data.title}</p>
+								<p class="text-sm text-zinc-500" >{blogPost.data.description}</p>
+							</div>
+							<p class="text-zinc-500">{blogPost.data.publishDate.toLocaleDateString()}</p>
+						</div>
+					))}
 					
 				</div>
 			</div>
