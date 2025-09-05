@@ -1,0 +1,47 @@
+---
+import '@fontsource-variable/inter';
+import { getCollection } from 'astro:content'
+
+const blogPosts = await getCollection('blog')
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Abdelkarim Djelalda</title>
+	</head>
+	<body>
+		<main class="w-screen md:max-w-2xl pt-10 md:pt-32 mx-auto space-y-7 px-4 pb-6">
+
+		</main>
+	</body>
+</html>
+
+<style>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+	@layer base {
+    :root {
+      --background: #1E1E2E;
+      --text: #CDD6F4;
+      --secondary: #F9E2AF;
+      --muted-text: #BAC2DE;
+      --accent: #A6E3A1;
+      --border: #313244;
+
+      --link: #A6E3A1;
+      --link-hover: #C3E8B5;
+      --green-accent: #A6E3A1;
+      --muted: #BAC2DE;
+      --divider: #45475A;
+    }
+		body {
+			@apply bg-zinc-950 text-zinc-300 w-screen;
+		}
+	}
+</style>

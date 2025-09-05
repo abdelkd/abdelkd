@@ -78,9 +78,25 @@ const blogPosts = await getCollection('blog')
 	@tailwind components;
 	@tailwind utilities;
 
+  @theme {
+    --background: #1E1E2E;
+    --text: #CDD6F4;
+    --secondary: #F9E2AF;
+    --muted-text: #BAC2DE;
+    --accent: #A6E3A1;
+    --border: #313244;
+
+    --link: #A6E3A1;
+    --link-hover: #C3E8B5;
+    --green-accent: #A6E3A1;
+    --muted: #BAC2DE;
+    --divider: #45475A;
+  }
+
 	@layer base {
 		body {
-			@apply bg-zinc-950 text-zinc-300 w-screen;
+			@apply text-zinc-300 w-screen;
+      background: var(--background);
 		}
 	}
 </style>
